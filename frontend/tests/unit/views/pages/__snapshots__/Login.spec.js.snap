@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login.vue renders correctly 1`] = `
+<div
+  class="c-app flex-row align-items-center"
+>
+  <ccontainer-stub
+    tag="div"
+  >
+    <crow-stub
+      class="justify-content-center"
+      gutters="true"
+      tag="div"
+    >
+      <ccol-stub
+        md="6"
+        sm="12"
+        tag="div"
+      >
+        <ccardgroup-stub
+          tag="div"
+        >
+          <ccard-stub
+            class="p-4"
+          >
+            <ccardbody-stub>
+              <cform-stub>
+                <h1>
+                  Login
+                </h1>
+                 
+                <p
+                  class="text-muted"
+                >
+                  Sign In to your account
+                </p>
+                 
+                <cinput-stub
+                  autocomplete="username email"
+                  lazy="400"
+                  placeholder="Username"
+                  type="text"
+                />
+                 
+                <cinput-stub
+                  autocomplete="curent-password"
+                  lazy="400"
+                  placeholder="Password"
+                  type="password"
+                />
+                 
+                <crow-stub
+                  gutters="true"
+                  tag="div"
+                >
+                  <ccol-stub
+                    class="text-left"
+                    col="6"
+                    tag="div"
+                  >
+                    <cbutton-stub
+                      activeclass="router-link-active"
+                      class="px-4"
+                      color="primary"
+                      event="click"
+                      exactactiveclass="router-link-exact-active"
+                      routertag="a"
+                      target="_self"
+                      type="button"
+                    >
+                      Login
+                    </cbutton-stub>
+                  </ccol-stub>
+                   
+                  <ccol-stub
+                    class="text-right"
+                    col="6"
+                    tag="div"
+                  >
+                    <cbutton-stub
+                      activeclass="router-link-active"
+                      class="px-0"
+                      color="link"
+                      event="click"
+                      exactactiveclass="router-link-exact-active"
+                      routertag="a"
+                      target="_self"
+                      type="button"
+                    >
+                      <small>
+                        Forgot password?
+                      </small>
+                    </cbutton-stub>
+                  </ccol-stub>
+                </crow-stub>
+              </cform-stub>
+            </ccardbody-stub>
+          </ccard-stub>
+        </ccardgroup-stub>
+      </ccol-stub>
+    </crow-stub>
+  </ccontainer-stub>
+</div>
+`;
