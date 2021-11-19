@@ -25,6 +25,7 @@
     "persistent-cache": "^1.1.1",
     "require-dir": "^1.2.0",
     "sequelize": "^6.6.2",
+    "sweetalert2": "^11.1.10",
     "winston": "^3.3.3"
   },
   "devDependencies": {

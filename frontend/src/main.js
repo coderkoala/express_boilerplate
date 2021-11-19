@@ -7,21 +7,18 @@ import CoreuiVue from '@coreui/vue';
 import { freeSet as icons  } from '@coreui/icons';
 import store from './state';
 import auth from './auth';
-import validation from './validation';
-import VueSweetalert2 from 'vue-sweetalert2';
+import validation from './helpers/validation';
+import swal from './helpers/swal';
 
 // Initialize a few vue options.
 Vue.use(CoreuiVue);
 Vue.config.performance = true;
 Vue.component('ValidationProvider', validation);
 auth.configureRedirection(router, store); // auth middleware
-const options = {
-  confirmButtonColor: '#2a1ab9',
-  cancelButtonColor: '#ff7674',
-};
+
 
 // Boot SWAL.
-Vue.use(VueSweetalert2, options);
+Vue.prototype.$swal = swal;
 
 // If you don't need the styles, do not connect
 import 'sweetalert2/dist/sweetalert2.min.css';

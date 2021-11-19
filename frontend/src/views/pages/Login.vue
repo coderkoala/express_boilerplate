@@ -72,7 +72,8 @@ export default {
     }
   },
   // mounted: function(){
-  //   console.log(this);
+  //   console.log(this.$swal);
+  //   this.$swal.renderMessage('Hello', 'This is a warning', 'warning')
   // }
 }
 </script>
