@@ -23,6 +23,9 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// Purchase Order Views
+const PurchaseOrder = ()=> import('@/views/poOrder/PoOrder');
+
 Vue.use(Router)
  
 let configureRoutes = () => {
@@ -37,6 +40,11 @@ let configureRoutes = () => {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'purchase',
+          name: 'Purchase Order',
+          component: PurchaseOrder
         },
         {
           path: 'widgets',

@@ -4,7 +4,7 @@ import App from './App';
 import axios from 'axios';
 import router from './router';
 import CoreuiVue from '@coreui/vue';
-import { iconsSet as icons } from './assets/icons/icons.js';
+import { freeSet as icons  } from '@coreui/icons';
 import store from './state';
 import auth from './auth';
 import validation from './validation';

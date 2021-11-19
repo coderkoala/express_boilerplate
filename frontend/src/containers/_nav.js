@@ -13,6 +13,12 @@ export default [
         }
       },
       {
+        _name: 'CSidebarNavItem',
+        name: 'Purchase Order',
+        to: '/purchase',
+        icon: 'cil-asterisk',
+      },
+      {
         _name: 'CSidebarNavTitle',
         _children: ['Components']
       },
