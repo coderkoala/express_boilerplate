@@ -71,8 +71,8 @@ export default {
         password: '',
     }
   },
-  mounted: function(){
-    console.log(this);
-  }
+  // mounted: function(){
+  //   console.log(this);
+  // }
 }
 </script>
