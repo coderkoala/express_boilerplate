@@ -26,6 +26,9 @@ const User = () => import('@/views/users/User')
 // Purchase Order Views
 const PurchaseOrder = ()=> import('@/views/poOrder/PoOrder');
 
+// Customer Management Views
+const CustomerAddNew = ()=> import('@/views/customerManagement/CustomerAddNew');
+
 Vue.use(Router)
  
 let configureRoutes = () => {
@@ -45,6 +48,43 @@ let configureRoutes = () => {
           path: 'purchase',
           name: 'Purchase Order',
           component: PurchaseOrder
+        },
+        {
+          path: 'customers',
+          meta: {
+            label: 'Customer Management'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: 'add-new',
+              name: 'Customer Management',
+              meta: {
+                label: 'Add new Customer'
+              },
+              component: CustomerAddNew
+            },
+            {
+              path: 'all',
+              meta: {
+                label: 'Customer Details'
+              },
+              name: 'Customer',
+              component: Users
+            },
+            {
+              path: '',
+              meta: {
+                label: 'Customer Details'
+              },
+              name: 'Customer',
+              component: Users
+            }
+          ]
         },
         {
           path: 'widgets',
