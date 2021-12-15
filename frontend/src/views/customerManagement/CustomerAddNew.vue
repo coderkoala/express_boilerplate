@@ -95,7 +95,7 @@
                   <label for="telephonePrimary" class="col-4 col-form-label">Telephone Number Primary</label>
                   <div class="col-12">
                     <input id="telephonePrimary" name="telephonePrimary" type="text" class="form-control" />
-                  </div>
+                  </div>  
                 </div>
                 <div class="form-group row">
                   <label for="telephoneSecondary" class="col-4 col-form-label">Telephone Number Secondary</label>
