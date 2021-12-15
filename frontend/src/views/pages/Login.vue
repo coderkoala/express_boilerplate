@@ -71,8 +71,9 @@ export default {
         password: '',
     }
   },
-  mounted: function(){
-    console.log(this);
-  }
+  // mounted: function(){
+  //   console.log(this.$swal);
+  //   this.$swal.renderMessage('Hello', 'This is a warning', 'warning')
+  // }
 }
 </script>

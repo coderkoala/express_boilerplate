@@ -7,10 +7,32 @@ export default [
         name: 'Dashboard',
         to: '/dashboard',
         icon: 'cil-speedometer',
-        badge: {
-          color: 'primary',
-          text: 'NEW'
-        }
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Purchase Order',
+        to: '/purchase',
+        icon: 'cil-asterisk',
+      },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Customer Management']
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Customer Management',
+        route: '/customers/all',
+        icon: 'cil-group',
+        items: [
+          {
+            name: 'Add new Customer',
+            to: '/customers/add-new',
+          },
+          {
+            name: 'All customers',
+            to: '/customers/all'
+          },
+        ]
       },
       {
         _name: 'CSidebarNavTitle',
@@ -41,11 +63,6 @@ export default [
         name: 'Widgets',
         to: '/widgets',
         icon: 'cil-calculator',
-        badge: {
-          color: 'primary',
-          text: 'NEW',
-          shape: 'pill'
-        }
       },
       {
         _name: 'CSidebarNavDivider',

@@ -1,6 +1,3 @@
-// If you want to override variables do it here
-@import "variables";
-
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 
@@ -15,3 +12,6 @@
   height: 1.2rem;
   font-size: 1.2rem;
 }
+
+// Import SweetAlert.
+@import '~sweetalert2/dist/sweetalert2.min.css';
