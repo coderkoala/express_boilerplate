@@ -1,15 +1,16 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('user_permissions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT
       },
-      username: {
-        type: Sequelize.STRING(50)
+      name: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
       },
       firstName: {
         allowNull: true,
@@ -27,15 +28,17 @@ module.exports = {
       },
       passwordUpdatedAt: {
         allowNull: true,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       lastLogin: {
         allowNull: true,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       lastLoginIP: {
         allowNull: true,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(50),
       },
       isActive: {
         allowNull: false,
@@ -44,15 +47,17 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('user_permissions');
   }
 };

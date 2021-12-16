@@ -8,34 +8,36 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.BIGINT
       },
-      username: {
-        type: Sequelize.STRING(50)
+      type: {
+        allowNull: false,
+        type: DataTypes.ENUM,
+        values: ['administrator', 'manager', 'customer', 'employee'],
+        defaultValue: 'customer'
       },
-      firstName: {
-        allowNull: true,
+      guard: {
+        allowNull: false,
+        type: DataTypes.ENUM,
+        values: ['web', 'api', 'nav', 'all'],
+        defaultValue: 'all'
+      },
+      name: {
+        allowNull: false,
         type: Sequelize.STRING(160)
       },
-      lastName: {
-        allowNull: true,
-        type: Sequelize.STRING(160)
-      },
-      email: {
+      description: {
+        allowNull: false,
+        defaultValue: 'Description for the permission has not been set.',
         type: Sequelize.STRING(255)
       },
-      password: {
-        type: Sequelize.STRING(255)
-      },
-      passwordUpdatedAt: {
+      group: {
+        type: Sequelize.INTEGER,
         allowNull: true,
-        type: Sequelize.DATE
+        defaultValue: null
       },
-      lastLogin: {
+      sort: {
+        type: Sequelize.INTEGER,
         allowNull: true,
-        type: Sequelize.DATE
-      },
-      lastLoginIP: {
-        allowNull: true,
-        type: Sequelize.STRING(50)
+        defaultValue: null
       },
       isActive: {
         allowNull: false,
@@ -44,11 +46,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
     });
   },
