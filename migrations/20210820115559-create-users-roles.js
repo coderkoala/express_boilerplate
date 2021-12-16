@@ -1,12 +1,18 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('user_permissions', {
+    await queryInterface.createTable('user_roles', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT
+      },
+      type: {
+        allowNull: false,
+        type: Sequelize.ENUM,
+        values: ['administrator', 'manager', 'employee', 'customer', 'custom'],
+        defaultValue: 'customer'
       },
       name: {
         allowNull: false,
@@ -14,18 +20,8 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        defaultValue: 'Description for the permission has not been set.',
+        defaultValue: 'Description for the system role has not been set.',
         type: Sequelize.STRING(255)
-      },
-      group: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: null
-      },
-      sort: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: null
       },
       isActive: {
         allowNull: false,
@@ -45,6 +41,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('user_permissions');
+    await queryInterface.dropTable('user_roles');
   }
 };

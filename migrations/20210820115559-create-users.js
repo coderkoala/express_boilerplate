@@ -8,36 +8,37 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.BIGINT
       },
-      type: {
+      username: {
+        type: Sequelize.STRING(50),
         allowNull: false,
-        type: DataTypes.ENUM,
-        values: ['administrator', 'manager', 'customer', 'employee'],
-        defaultValue: 'customer'
       },
-      guard: {
-        allowNull: false,
-        type: DataTypes.ENUM,
-        values: ['web', 'api', 'nav', 'all'],
-        defaultValue: 'all'
-      },
-      name: {
-        allowNull: false,
+      firstName: {
+        allowNull: true,
         type: Sequelize.STRING(160)
       },
-      description: {
-        allowNull: false,
-        defaultValue: 'Description for the permission has not been set.',
+      lastName: {
+        allowNull: true,
+        type: Sequelize.STRING(160)
+      },
+      email: {
         type: Sequelize.STRING(255)
       },
-      group: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: null
+      password: {
+        type: Sequelize.STRING(255)
       },
-      sort: {
-        type: Sequelize.INTEGER,
+      passwordUpdatedAt: {
         allowNull: true,
-        defaultValue: null
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
+      },
+      lastLogin: {
+        allowNull: true,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
+      },
+      lastLoginIP: {
+        allowNull: true,
+        type: Sequelize.STRING(50),
       },
       isActive: {
         allowNull: false,
