@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "node ./bin/www",
-    "nodemon": "nodemon --ignore logs"
+    "nodemon": "nodemon ./bin/www --ignore logs"
   },
   "dependencies": {
     "axios": "^0.21.4",
