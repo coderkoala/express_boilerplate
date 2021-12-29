@@ -1,12 +1,10 @@
 'use strict';
 
-const bcrypt = require('bcrypt');
-
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Users extends Model {
+  class UserPermissions extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -16,32 +14,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Users.init({
+  UserPermissions.init({
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey:true,
       type:DataTypes.BIGINT
     },
-    role_id: DataTypes.BIGINT,
-    username: DataTypes.STRING(50),
-    firstName: DataTypes.STRING(160),
-    lastName: DataTypes.STRING(160),
-    email: DataTypes.STRING(255),
-    password: DataTypes.STRING(255),
-    passwordUpdatedAt: DataTypes.STRING,
-    lastLogin: DataTypes.DATE,
-    lastLoginIP: DataTypes.STRING(50),
+    name: DataTypes.STRING(255),
+    description: DataTypes.STRING(255),
+    group: DataTypes.INTEGER,
+    sort: DataTypes.INTEGER,
     isActive: DataTypes.ENUM(['active', 'inactive']),
   }, {
     sequelize,
     timestamps: true,
-    hooks: {
-      beforeCreate: (user, options) => {
-        user.password = bcrypt.hashSync(user.password, 10);
-      }
-    },
-    modelName: 'users',
+    modelName: 'user_permissions',
   });
-  return Users;
+  return UserPermissions;
 };
