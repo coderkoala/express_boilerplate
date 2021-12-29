@@ -8,6 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.BIGINT
       },
+      role_id: {
+        type: Sequelize.BIGINT,
+        references: {
+          model: {
+            tableName: 'user_roles',
+          },
+          key: 'id',
+        },
+        allowNull: true,
+        onDelete: 'CASCADE',
+      },
       username: {
         type: Sequelize.STRING(50),
         allowNull: false,
