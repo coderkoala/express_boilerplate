@@ -9,11 +9,10 @@ class AuthenticationController {
   constructor() {}
 
   async authenticate(req, res) {
-
-    console.log( req.body );
     const username = req.body.username;
     const password = req.body.password;
 
+    console.dir( {'1': UsersRepository.findOne,'2': username} );
     let user = UsersRepository.findOne(username);
 
     let valid = user.then((user) => {
@@ -31,6 +30,7 @@ class AuthenticationController {
           // Todo: Remove
           // curl -X POST -H "Content-Type: application/json" -d "{ \"username\": \"admin\", \"password\":\"pass\" }" http://localhost:3000/api/v1/authenticate
           UsersRepository.findById(user.dataValues.id).then(user => { console.log(user)});
+          console.log('here');
           // EndTodo
           let payload = { user: user.dataValues.username, roles: user.dataValues.roles };
           return res.status(200).send({ token: JwtService.sign(payload) });
