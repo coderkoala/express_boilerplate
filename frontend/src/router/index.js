@@ -29,6 +29,12 @@ const PurchaseOrder = ()=> import('@/views/poOrder/PoOrder');
 // Customer Management Views
 const CustomerAddNew = ()=> import('@/views/customerManagement/CustomerAddNew');
 
+// FeedBack Management Views
+const FeedBackManagement = ()=> import('@/views/feedBackManagement/FeedBackManagementNew');
+
+// Task Management Views
+const taskManagement = ()=> import('@/views/taskManagement/taskManagementNew');
+
 Vue.use(Router)
  
 let configureRoutes = () => {
@@ -76,14 +82,64 @@ let configureRoutes = () => {
               name: 'Customer',
               component: Users
             },
-            {
-              path: '',
-              meta: {
-                label: 'Customer Details'
-              },
-              name: 'Customer',
-              component: Users
+          ]
+        },
+        {
+          path: 'feedback',
+          meta: {
+            label: 'Customer Management'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
             }
+          },
+          children: [
+            {
+              path: 'add-new',
+              name: 'Feedback Management',
+              meta: {
+                label: 'Add a new customer feedback'
+              },
+              component: FeedBackManagement
+            },
+            {
+              path: 'all',
+              meta: {
+                label: 'Feedback Details'
+              },
+              name: 'Feedback',
+              component: Users
+            },
+          ]
+        },
+        {
+          path: 'task',
+          meta: {
+            label: 'Customer Management'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: 'add-new',
+              name: 'Task Management',
+              meta: {
+                label: 'Add a new task'
+              },
+              component: taskManagement
+            },
+            {
+              path: 'all',
+              meta: {
+                label: 'Task Details'
+              },
+              name: 'task',
+              component: Users
+            },
           ]
         },
         {

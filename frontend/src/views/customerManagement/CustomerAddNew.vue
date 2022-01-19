@@ -112,13 +112,13 @@
                 <div class="form-group row">
                   <label class="col-4">Shipping Address?</label>
                   <div class="col-12">
-                    <div class="custom-control">
-                      <input name="Shipping Address" id="Shipping Address_0" type="checkbox" class="custom-control-input" value="true" />
-                      <label for="Shipping Address_0" class="custom-control-label">Yes</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input name="shippingFlag" id="shippingFlag_0" type="radio" class="custom-control-input" value="true" />
+                      <label for="shippingFlag_0" class="custom-control-label">Yes</label>
                     </div>
-                    <div class="custom-control">
-                      <input name="Shipping Address" id="Shipping Address_1" type="checkbox" class="custom-control-input" value="false" />
-                      <label for="Shipping Address_1" class="custom-control-label">No</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input name="shippingFlag" id="shippingFlag_1" type="radio" class="custom-control-input" value="false" />
+                      <label for="shippingFlag_1" class="custom-control-label">No</label>
                     </div>
                   </div>
                 </div>
