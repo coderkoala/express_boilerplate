@@ -9,6 +9,10 @@ export default [
         icon: 'cil-speedometer',
       },
       {
+        _name: 'CSidebarNavTitle',
+        _children: ['Purchase Order Management']
+      },
+      {
         _name: 'CSidebarNavItem',
         name: 'Purchase Order',
         to: '/purchase',
@@ -21,7 +25,6 @@ export default [
       {
         _name: 'CSidebarNavDropdown',
         name: 'Customer Management',
-        route: '/customers/all',
         icon: 'cil-group',
         items: [
           {
@@ -31,6 +34,44 @@ export default [
           {
             name: 'All customers',
             to: '/customers/all'
+          },
+        ]
+      },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Feedback Management']
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Feedback Management',
+        icon: 'cil-envelope-letter',
+        items: [
+          {
+            name: 'Add new Feedback',
+            to: '/feedback/add-new',
+          },
+          {
+            name: 'All Feedback',
+            to: '/feedback/all'
+          },
+        ]
+      },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Task Management']
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Task Management',
+        icon: 'cil-description',
+        items: [
+          {
+            name: 'Task Management',
+            to: '/task/add-new',
+          },
+          {
+            name: 'All Feedback',
+            to: '/task/all'
           },
         ]
       },

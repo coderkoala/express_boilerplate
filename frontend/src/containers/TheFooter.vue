@@ -1,8 +1,8 @@
 <template>
   <CFooter :fixed="false">
     <div>
-      <a href="https://coreui.io" target="_blank">CoreUI</a>
-      <span class="ml-1">&copy; {{new Date().getFullYear()}} creativeLabs.</span>
+      <a href="https://nobeldahal.com.np" target="_blank">Nobel Dahal</a>
+      <span class="ml-1">&copy; {{new Date().getFullYear()}} Comptech International Pvt. Ltd.</span>
     </div>
     <div class="mfs-auto">
       <span class="mr-1" target="_blank">Powered by</span>

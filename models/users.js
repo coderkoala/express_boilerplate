@@ -2,9 +2,7 @@
 
 const bcrypt = require('bcrypt');
 
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -15,33 +13,37 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  Users.init({
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey:true,
-      type:DataTypes.BIGINT
+  }
+  Users.init(
+    {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.BIGINT,
+      },
+      role_id: DataTypes.BIGINT,
+      username: DataTypes.STRING(50),
+      firstName: DataTypes.STRING(160),
+      lastName: DataTypes.STRING(160),
+      email: DataTypes.STRING(255),
+      password: DataTypes.STRING(255),
+      passwordUpdatedAt: DataTypes.STRING,
+      lastLogin: DataTypes.DATE,
+      lastLoginIP: DataTypes.STRING(50),
+      isActive: DataTypes.ENUM(['active', 'inactive']),
     },
-    role_id: DataTypes.BIGINT,
-    username: DataTypes.STRING(50),
-    firstName: DataTypes.STRING(160),
-    lastName: DataTypes.STRING(160),
-    email: DataTypes.STRING(255),
-    password: DataTypes.STRING(255),
-    passwordUpdatedAt: DataTypes.STRING,
-    lastLogin: DataTypes.DATE,
-    lastLoginIP: DataTypes.STRING(50),
-    isActive: DataTypes.ENUM(['active', 'inactive']),
-  }, {
-    sequelize,
-    timestamps: true,
-    hooks: {
-      beforeCreate: (user, options) => {
-        user.password = bcrypt.hashSync(user.password, 10);
-      }
-    },
-    modelName: 'users',
-  });
+    {
+      sequelize,
+      timestamps: true,
+      hooks: {
+        beforeCreate: (user, options) => {
+          user.password = bcrypt.hashSync(user.password, 10);
+        },
+      },
+      modelName: 'Users',
+      tableName: 'users',
+    }
+  );
   return Users;
 };

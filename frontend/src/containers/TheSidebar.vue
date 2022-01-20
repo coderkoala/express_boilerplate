@@ -1,8 +1,8 @@
 <template>
   <CSidebar fixed :minimize="minimize" :show="show" @update:show="(value) => $store.commit('set', ['sidebarShow', value])">
     <CSidebarBrand class="d-md-down-none" to="/">
-      <CIcon class="c-sidebar-brand-full" name="cil-basket" size="custom-size" :height="35" viewBox="0 0 556 134" />
-      <CIcon class="c-sidebar-brand-minimized" name="cil-basket" size="custom-size" :height="35" viewBox="0 0 110 134" />
+      <img :src="require('../../public/img/logo.png')" class="c-sidebar-brand-full" height="35" />
+      <img class="c-sidebar-brand-minimized" :src="require('../../public/img/logo.png')" height="35" />
     </CSidebarBrand>
 
     <CRenderFunction flat :content-to-render="$options.nav" />
